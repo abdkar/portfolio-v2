@@ -10,8 +10,35 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swa
 const playfair = Playfair_Display({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: { default: `${site.name} — Trustworthy AI & Machine Learning`, template: `%s · ${site.name}` },
   description: "Research and scientific software by Abdolamir Karbalaie: clinical AI, rigorous model validation, uncertainty, and reproducible machine learning.",
+  keywords: [
+    "Abdolamir Karbalaie",
+    "Data Scientist",
+    "Machine Learning Researcher",
+    "TrustCV",
+    "Karolinska Institutet",
+    "Clinical AI",
+    "Model Validation",
+    "Biomedical Engineering",
+    "Sweden",
+  ],
+  authors: [{ name: site.name, url: site.links.github }],
+  openGraph: {
+    title: `${site.name} — Trustworthy AI & Machine Learning`,
+    description: "Research and scientific software by Abdolamir Karbalaie: clinical AI, rigorous model validation, uncertainty, and reproducible machine learning.",
+    type: "website",
+    locale: "en_US",
+    siteName: `${site.name} Portfolio`,
+    images: [{ url: site.portrait, width: 800, height: 1000, alt: site.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — Trustworthy AI & Machine Learning`,
+    description: "Research and scientific software by Abdolamir Karbalaie: clinical AI, rigorous model validation, uncertainty, and reproducible machine learning.",
+    images: [site.portrait],
+  },
 };
 
 const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||'${site.defaultTheme}'}catch(e){document.documentElement.dataset.theme='${site.defaultTheme}'}`;

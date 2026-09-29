@@ -155,3 +155,427 @@ export const stats = [
 export const marquee = ["Karolinska Institutet", "KTH Royal Institute of Technology", "Luleå University of Technology", "Umeå University", "Mid Sweden University", "Frontiers in Artificial Intelligence", "JMIR AI", "Journal of Biomechanics", "Journal of Sports Sciences", "Climate Risk Management", "Transportation Research Part D", "Microvascular Research"];
 
 export const publicationTopics = ["Validation under dependence", "Clinical speech & human review", "Multimodal rehabilitation AI", "Medical imaging & reproducibility"];
+
+export type ExperienceItem = {
+  title: string;
+  org: string;
+  location: string;
+  period: string;
+  bullets?: string[];
+  description?: string;
+  slug?: string;
+};
+
+export type EducationItem = {
+  title: string;
+  org: string;
+  location: string;
+  period: string;
+  description: string;
+};
+
+export type Publication = {
+  title: string;
+  authors: string;
+  venue: string;
+  detail: string;
+  year: number;
+  type: "journal" | "conference" | "preprint";
+  url: string;
+  area: string;
+  first: boolean;
+  contribution: string;
+};
+
+export const experiences: ExperienceItem[] = [
+  {
+    title: "Affiliated Researcher & Lead Developer",
+    org: "Karolinska Institutet — CLINTEC / SMAILE Core Facility",
+    location: "Stockholm, Sweden",
+    period: "2025 – Present",
+    bullets: [
+      "Lead developer of TrustCV: validation architecture, leakage checks, reusable Python tooling, and methodological documentation.",
+      "Co-developed MEDLEY-BENCH; contributed formal analysis, human validation, and benchmark interpretation.",
+      "Co-develop TRIAGE-MEDLEY: transcript alignment, model disagreement, uncertainty surfacing, and human-review workflows.",
+      "Corresponding author and co-supervisor of an international scoping review of AI in nailfold capillaroscopy."
+    ],
+    slug: "trustcv"
+  },
+  {
+    title: "Machine Learning Lead — Railway Climate Resilience",
+    org: "Luleå University of Technology",
+    location: "Luleå, Sweden",
+    period: "2023 – Present",
+    bullets: [
+      "Lead machine-learning modelling for prediction and classification of climate-related railway failures.",
+      "Develop reproducible evaluation workflows with MLflow and Docker, and interpret model behaviour with infrastructure specialists.",
+      "First author of the 2025 Climate Risk Management study on regional and national railway networks."
+    ],
+    slug: "railway-resilience"
+  },
+  {
+    title: "Staff Scientist, AI & Biomechanics",
+    org: "Umeå University",
+    location: "Umeå, Sweden",
+    period: "Jan 2025 – Aug 2025",
+    bullets: [
+      "Developed ML models for movement-analysis and rehabilitation data using Python, PyTorch/scikit-learn, and SHAP.",
+      "Owned data preparation, model development, evaluation, experiment tracking, and containerised deployment in a research setting.",
+      "Worked with clinicians and engineers to make research outputs interpretable and usable."
+    ],
+    slug: "rehabilitation-ai"
+  },
+  {
+    title: "Postdoctoral Researcher — ML for Biomechanics",
+    org: "Umeå University",
+    location: "Umeå, Sweden",
+    period: "2023 – 2025",
+    bullets: [
+      "Developed multimodal models connecting biomechanical motion and EMG measurements with fear of re-injury after ACL reconstruction.",
+      "Led study design, participant-aware validation, multimodal analysis, interpretation, and first-author manuscripts.",
+      "Co-supervised student research and contributed reusable workflows for repeated-measures data."
+    ],
+    slug: "rehabilitation-ai"
+  },
+  {
+    title: "Postdoctoral Researcher — Video Analytics & XAI",
+    org: "Mid Sweden University",
+    location: "Sundsvall, Sweden",
+    period: "2019 – 2021",
+    bullets: [
+      "Developed and trained deep learning models (CNNs/RNNs) for anomaly and event detection in real-time surveillance video streams.",
+      "Optimised models for latency and throughput; implemented streaming pipelines, monitoring, and robust evaluation under distribution shift.",
+      "Contributed to both algorithm development and software implementation in a small research/engineering team."
+    ],
+    slug: "video-analytics"
+  },
+  {
+    title: "Doctoral Researcher — Medical Image Analysis",
+    org: "KTH Royal Institute of Technology",
+    location: "Stockholm, Sweden",
+    period: "2013 – 2019",
+    bullets: [
+      "Built computer-aided diagnostic methods for rheumatic disease based on nailfold capillaroscopy images (microvascular medical imaging).",
+      "Developed image-processing and ML algorithms for capillary detection, quantification, and feature extraction to support clinical decision-making.",
+      "Worked with rheumatologists and imaging units to design analysis pipelines, validate models, and prepare scientific and technical documentation."
+    ],
+    slug: "capillaroscopy"
+  }
+];
+
+export const education: EducationItem[] = [
+  {
+    title: "Ph.D., Applied Medical Technology",
+    org: "KTH Royal Institute of Technology",
+    location: "Stockholm, Sweden",
+    period: "2018",
+    description: "Thesis: Novel Analysis Toolkit for Capillaroscopic Images: Development and Clinical Evaluation. Research in medical image analysis, quantitative validation, and clinical decision-support technology."
+  },
+  {
+    title: "M.Sc., Mathematics",
+    org: "Isfahan University of Technology",
+    location: "Isfahan, Iran",
+    period: "2002",
+    description: "Advanced mathematical training that supports my work in modelling, statistical reasoning, and scientific computation."
+  },
+  {
+    title: "B.Sc., Mathematics",
+    org: "University of Isfahan",
+    location: "Isfahan, Iran",
+    period: "2000",
+    description: "Foundations in mathematics, developed into a research practice spanning computational methods and applied machine learning."
+  }
+];
+
+export const publications: Publication[] = [
+  {
+    title: "Artificial Intelligence in Nailfold Capillaroscopy: A Scoping Review of Validation, Reproducibility, and Clinical Translation",
+    authors: "Emrani, Z., Setarehdan, S. K., Jafari-Varzaneh, H., Fatemi, A., & Karbalaie, A.",
+    venue: "Research Square (preprint; manuscript under review)",
+    detail: "",
+    year: 2026,
+    type: "preprint",
+    url: "https://doi.org/10.21203/rs.3.rs-10348706/v1",
+    area: "Medical Imaging",
+    first: false,
+    contribution: "Corresponding author and co-supervisor — review design, screening, data charting, analysis, writing, and coordination across four institutions."
+  },
+  {
+    title: "Cross-model disagreement as a reference-free signal for prioritizing human review in medical speech transcription",
+    authors: "Karbalaie, A., Seoane, F., & Abtahi, F.",
+    venue: "Frontiers in Artificial Intelligence",
+    detail: "Article 1829902",
+    year: 2026,
+    type: "journal",
+    url: "https://doi.org/10.3389/frai.2026.1829902",
+    area: "Speech & Language AI",
+    first: true,
+    contribution: "Lead and corresponding author — conceptualization, methodology, software, validation, and manuscript."
+  },
+  {
+    title: "Enhancing fear of re-injury classification after ACL reconstruction by integrating biomechanical and electromyography data using multimodal machine learning methods",
+    authors: "Karbalaie, A., Grinberg, A., Strong, A., Grip, H., Prorok, K., Häger, C. K., & Nordström, T.",
+    venue: "Journal of Biomechanics",
+    detail: "204, 113346",
+    year: 2026,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.jbiomech.2026.113346",
+    area: "Clinical & Biomechanics ML",
+    first: true,
+    contribution: "First author — study design, multimodal ML methodology, validation, analysis, and drafting."
+  },
+  {
+    title: "Participant-Aware Model Validation for Repeated-Measures Data: Comparative Cross-Validation Study",
+    authors: "Karbalaie, A., Abtahi, F., & Häger, C. K.",
+    venue: "JMIR AI",
+    detail: "5:e87728",
+    year: 2026,
+    type: "journal",
+    url: "https://doi.org/10.2196/87728",
+    area: "AI Evaluation & Validation",
+    first: true,
+    contribution: "First author — methodological framing, evaluation design, statistical benchmarking, reproducible code."
+  },
+  {
+    title: "Cross-validation under data dependence: a review-derived taxonomy and TrustCV, a leakage-aware Python toolkit",
+    authors: "Karbalaie, A. & Abtahi, F.",
+    venue: "Research Square (preprint)",
+    detail: "",
+    year: 2026,
+    type: "preprint",
+    url: "https://doi.org/10.21203/rs.3.rs-9357577/v1",
+    area: "AI Evaluation & Validation",
+    first: true,
+    contribution: "First author — taxonomy, toolkit design, and manuscript writing."
+  },
+  {
+    title: "MEDLEY-BENCH: Benchmarking Behavioural Metacognition and Belief Revision Under Social Pressure in Large Language Models",
+    authors: "Abtahi, F., Karbalaie, A., Illueca-Fernandez, E., & Seoane, F.",
+    venue: "arXiv (preprint)",
+    detail: "2604.16009",
+    year: 2026,
+    type: "preprint",
+    url: "https://arxiv.org/abs/2604.16009v2",
+    area: "AI Evaluation & Validation",
+    first: false,
+    contribution: "Co-author — formal analysis, human-validation work, benchmark interpretation."
+  },
+  {
+    title: "Beyond self-reports after anterior cruciate ligament injury — machine learning methods for classifying and identifying movement patterns related to fear of re-injury",
+    authors: "Karbalaie, A., Strong, A., Nordström, T., Schelin, L., Selling, J., Grip, H., Prorok, K., & Häger, C. K.",
+    venue: "Journal of Sports Sciences",
+    detail: "44(3), 342–356",
+    year: 2026,
+    type: "journal",
+    url: "https://doi.org/10.1080/02640414.2025.2578584",
+    area: "Clinical & Biomechanics ML",
+    first: true,
+    contribution: "First author — ML methodology, analysis pipeline, interpretation, and manuscript."
+  },
+  {
+    title: "Classifying climate-related failures for regional-national railway networks",
+    authors: "Karbalaie, A., Soleimani-Chamkhorami, K., Famurewa, S. M., & Garmabaki, A. H. S.",
+    venue: "Climate Risk Management",
+    detail: "50, 100764",
+    year: 2025,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.crm.2025.100764",
+    area: "Infrastructure & Climate",
+    first: true,
+    contribution: "First author — modelling strategy, synchronized cross-validation design, interpretability analysis."
+  },
+  {
+    title: "Identifying climate-related failures in railway infrastructure using machine learning",
+    authors: "Soleimani-Chamkhorami, K., Karbalaie, A., Kasraei, A., Haghighi, E., Famurewa, S. M., & Garmabaki, A. H. S.",
+    venue: "Transportation Research Part D: Transport and Environment",
+    detail: "135, 104371",
+    year: 2024,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.trd.2024.104371",
+    area: "Infrastructure & Climate",
+    first: false,
+    contribution: "Co-author — primary responsibility for ML analysis and evaluation strategy."
+  },
+  {
+    title: "Event detection in surveillance videos: a review",
+    authors: "Karbalaie, A., Abtahi, F., & Sjöström, M.",
+    venue: "Multimedia Tools and Applications",
+    detail: "",
+    year: 2022,
+    type: "journal",
+    url: "https://doi.org/10.1007/s11042-021-11864-2",
+    area: "Computer Vision",
+    first: true,
+    contribution: "First author — comprehensive survey, taxonomies, latency/throughput evaluation, and synthesis."
+  },
+  {
+    title: "Nailfold microvascular changes in patients with systemic lupus erythematosus",
+    authors: "Karbalaie, A., et al.",
+    venue: "Microvascular Research",
+    detail: "103910",
+    year: 2019,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.mvr.2019.103910",
+    area: "Medical Imaging",
+    first: true,
+    contribution: "First author — quantitative morphometry, statistical evaluation, and clinical correlation."
+  },
+  {
+    title: "Practical issues in assessing nailfold capillaroscopic images: a summary",
+    authors: "Karbalaie, A., Emrani, Z., Fatemi, A., Etehadtavakol, M., & Erlandsson, B.-E.",
+    venue: "Clinical Rheumatology",
+    detail: "",
+    year: 2019,
+    type: "journal",
+    url: "https://doi.org/10.1007/s10067-019-04644-9",
+    area: "Medical Imaging",
+    first: true,
+    contribution: "First author — methodological consensus, observer reliability review, and best-practice recommendations."
+  },
+  {
+    title: "Image enhancement effect on inter and intra-observer reliability of nailfold capillary assessment",
+    authors: "Karbalaie, A., et al.",
+    venue: "Microvascular Research",
+    detail: "",
+    year: 2018,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.mvr.2018.06.005",
+    area: "Medical Imaging",
+    first: true,
+    contribution: "First author — image processing pipeline, multi-observer agreement study, and reproducibility metrics."
+  },
+  {
+    title: "Elliptical broken line method for calculating capillary density in nailfold capillaroscopy: proposal and evaluation",
+    authors: "Karbalaie, A., Etehadtavakol, M., Abtahi, F., Fatemi, A., Emrani, Z., & Erlandsson, B.-E.",
+    venue: "Microvascular Research",
+    detail: "",
+    year: 2017,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.mvr.2017.04.002",
+    area: "Medical Imaging",
+    first: true,
+    contribution: "First author — geometric algorithm design, automated density computation, and clinical benchmarking."
+  },
+  {
+    title: "Capillary density: An important parameter in nailfold capillaroscopy",
+    authors: "Karbalaie, A., Emrani, Z., Fatemi, A., Etehadtavakol, M., & Erlandsson, B.-E.",
+    venue: "Microvascular Research",
+    detail: "",
+    year: 2017,
+    type: "journal",
+    url: "https://doi.org/10.1016/j.mvr.2016.09.001",
+    area: "Medical Imaging",
+    first: true,
+    contribution: "First author — review and quantitative definition of capillary density in systemic sclerosis."
+  },
+  {
+    title: "Counting capillaries in nailfold capillaroscopy: State of the art and a proposed method",
+    authors: "Karbalaie, A., et al.",
+    venue: "IEEE-EMBS Conference on Biomedical Engineering and Sciences (IECBES)",
+    detail: "",
+    year: 2016,
+    type: "conference",
+    url: "https://doi.org/10.1109/IECBES.2016.7843437",
+    area: "Medical Imaging",
+    first: true,
+    contribution: "First author — automated detection architecture and experimental comparison."
+  },
+  {
+    title: "Nailfold Capillaroscopy in Rheumatic Diseases: Which Parameters Should Be Evaluated?",
+    authors: "Etehad Tavakol, M., Fatemi, A., Karbalaie, A., Emrani, Z., & Erlandsson, B.-E.",
+    venue: "BioMed Research International",
+    detail: "",
+    year: 2015,
+    type: "journal",
+    url: "https://doi.org/10.1155/2015/974530",
+    area: "Medical Imaging",
+    first: false,
+    contribution: "Co-author — parameter definitions, clinical image curation, and literature synthesis."
+  },
+  {
+    title: "Exact Solution of Time-Fractional Partial Differential Equations Using Sumudu Transform",
+    authors: "Karbalaie, A., Montazeri, M. M., & Muhammed, H. H.",
+    venue: "WSEAS Transactions on Mathematics",
+    detail: "",
+    year: 2014,
+    type: "journal",
+    url: "",
+    area: "Applied Mathematics",
+    first: true,
+    contribution: "First author — analytical derivation, integral transform methodology, and proof."
+  },
+  {
+    title: "Exact Solution of Partial Differential Equation Using Homo-Separation of Variables",
+    authors: "Karbalaie, A., Muhammed, H. H., Shabani, M., & Montazeri, M. M.",
+    venue: "International Journal of Nonlinear Science",
+    detail: "",
+    year: 2014,
+    type: "journal",
+    url: "",
+    area: "Applied Mathematics",
+    first: true,
+    contribution: "First author — exact analytical solutions for nonlinear PDE systems."
+  },
+  {
+    title: "Application of Homo-Separation of Variables method on nonlinear system of PDEs",
+    authors: "Karbalaie, A., et al.",
+    venue: "WSEAS Transactions on Mathematics",
+    detail: "",
+    year: 2014,
+    type: "journal",
+    url: "",
+    area: "Applied Mathematics",
+    first: true,
+    contribution: "First author — mathematical proofs and applications to coupled physical systems."
+  },
+  {
+    title: "Using Homo-Separation of Variables for Solving Systems of Nonlinear Fractional Partial Differential Equations",
+    authors: "Karbalaie, A., Montazeri, M. M., & Muhammed, H. H.",
+    venue: "International Journal of Mathematics and Mathematical Sciences",
+    detail: "421378",
+    year: 2013,
+    type: "journal",
+    url: "https://doi.org/10.1155/2013/421378",
+    area: "Applied Mathematics",
+    first: true,
+    contribution: "First author — fractional calculus techniques for nonlinear systems."
+  },
+  {
+    title: "New Approach to Find the Exact Solution of Fractional Partial Differential Equation",
+    authors: "Karbalaie, A., Muhammed, H. H., & Erlandsson, B.-E.",
+    venue: "WSEAS Transactions on Mathematics",
+    detail: "",
+    year: 2012,
+    type: "journal",
+    url: "",
+    area: "Applied Mathematics",
+    first: true,
+    contribution: "First author — formulation of exact solutions for fractional differential equations."
+  },
+  {
+    title: "Using Spectral Descriptive Signatures for Industrial Plume Detection",
+    authors: "Karbalaie, A., et al.",
+    venue: "Conference proceedings",
+    detail: "",
+    year: 2012,
+    type: "conference",
+    url: "",
+    area: "Computer Vision",
+    first: true,
+    contribution: "First author — spectral feature extraction and classification pipeline."
+  }
+];
+
+export const publicationStats = {
+  total: publications.length,
+  journals: publications.filter((p) => p.type === "journal").length,
+  conferences: publications.filter((p) => p.type === "conference").length,
+  preprints: publications.filter((p) => p.type === "preprint").length,
+  first: publications.filter((p) => p.first).length,
+};
+
+export const publicationAreas = [
+  "All areas",
+  ...Array.from(new Set(publications.map((p) => p.area))),
+];
+

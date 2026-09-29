@@ -7,9 +7,9 @@ import Magnetic from "./Magnetic";
 
 const NAV = [
   { href: "/work", label: "Work" },
-  { href: "/#about", label: "Experience" },
+  { href: "/experience", label: "Experience" },
   { href: "/expertise", label: "Expertise" },
-  { href: "/#publications", label: "Publications" },
+  { href: "/publications", label: "Publications" },
 ];
 
 export default function Header() {

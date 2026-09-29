@@ -12,7 +12,9 @@ export default function Footer() {
           </div>
           <nav className="footer-nav" aria-label="Footer">
             <Link href="/work">Work</Link>
+            <Link href="/experience">Experience</Link>
             <Link href="/expertise">Expertise</Link>
+            <Link href="/publications">Publications</Link>
             <a href={site.cv} target="_blank" rel="noopener">CV</a>
             <Link href="/#contact">Contact</Link>
           </nav>

@@ -1,6 +1,7 @@
 /** Personal details and links. Edit freely. */
 export const site = {
   name: "Abdolamir Karbalaie",
+  url: "https://abdkar.github.io/portfolio-v2",
   title: "Abdolamir Karbalaie, PhD",
   role: "Data scientist & machine learning researcher",
   location: "Stockholm, Sweden",
