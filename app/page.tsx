@@ -56,7 +56,7 @@ export default function Home() {
               I am the lead developer of TrustCV and an affiliated researcher at Karolinska Institutet’s SMAILE core facility. My research connects leakage-aware validation, uncertainty, explainability, and human oversight.
             </Reveal>
             <Reveal delay={180} className="links">
-              <a href={site.cv} target="_blank" rel="noopener" className="text-link">My research journey ↗</a>
+              <Link href="/experience" className="text-link">My research journey ↗</Link>
               <Link href="/expertise" className="text-link">How I work ↗</Link>
             </Reveal>
           </div>
@@ -75,10 +75,10 @@ export default function Home() {
               </h2>
               <p className="lead">18 journal articles, 2 conference papers, and 2 preprints. Each record identifies its publication status; recent work includes my contribution.</p>
               <Magnetic>
-                <a href={site.links.orcid} target="_blank" rel="noopener" className="btn btn-primary">
+                <Link href="/publications" className="btn btn-primary">
                   <span>Browse publications</span>
-                  <span className="arrow">↗</span>
-                </a>
+                  <span className="arrow">→</span>
+                </Link>
               </Magnetic>
             </div>
             <div className="topics">

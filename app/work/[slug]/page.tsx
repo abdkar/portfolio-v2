@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
+import TriageVisualizer from "@/components/TriageVisualizer";
+import BenchVisualizer from "@/components/BenchVisualizer";
+import RehabVisualizer from "@/components/RehabVisualizer";
 import { projects } from "@/lib/content";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -47,6 +50,10 @@ export default async function CasePage({ params }: Params) {
             <p className="case-text">{p.contribution}</p>
           </Reveal>
         </div>
+
+        {p.slug === "triage-medley" && <TriageVisualizer />}
+        {p.slug === "medley-bench" && <BenchVisualizer />}
+        {p.slug === "rehabilitation-ai" && <RehabVisualizer />}
 
         <div>
           <Reveal as="p" className="eyebrow step-title">Method</Reveal>
