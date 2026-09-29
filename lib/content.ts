@@ -579,3 +579,52 @@ export const publicationAreas = [
   ...Array.from(new Set(publications.map((p) => p.area))),
 ];
 
+/** Testimonials / "What Colleagues Say" */
+export const testimonials = [
+  {
+    quote: "I have found Abdolamir to be a committed and knowledgeable person who is never afraid to take on a challenging task.",
+    author: "Professor",
+    affiliation: "KTH Royal Institute of Technology",
+  },
+  {
+    quote: "Abdolamir sees everything as a mathematical equation. Has been known to describe a coffee break in differential terms before the third sip.",
+    author: "Research Infrastructure Specialist and SMAILE Manager",
+    affiliation: "Karolinska Institutet",
+  },
+];
+
+/** Career Goal */
+export const careerGoal = "To work as a data scientist on high-impact decision problems where predictive modelling directly improves business outcomes — combining strong quantitative skills with the ability to design, validate, and deploy production-quality ML systems that earn stakeholder trust.";
+
+/** Technical Skills */
+export const technicalSkills = {
+  languages: ["Python (primary)", "MATLAB", "SQL", "Bash"],
+  mlAi: ["PyTorch", "TensorFlow", "scikit-learn", "MONAI", "XGBoost", "LightGBM"],
+  data: ["pandas", "NumPy", "SciPy", "Polars", "Dask"],
+  mlops: ["MLflow", "Docker", "Git", "CI/CD", "Azure ML"],
+  visualization: ["Matplotlib", "Seaborn", "Plotly", "Streamlit"],
+  nlp: ["Hugging Face Transformers", "spaCy", "Whisper"],
+};
+
+/** Teaching & Supervision */
+export const teaching = [
+  "Supervised 8+ Master's theses in machine learning, medical imaging, and computer vision.",
+  "Teaching assistant in mathematics, physics, and programming at multiple Swedish universities.",
+  "Designed and delivered workshops on cross-validation best practices for clinical research groups.",
+];
+
+/** Leadership & Community */
+export const leadership = [
+  "Reviewer for peer-reviewed journals in medical informatics and machine learning.",
+  "Contributed to the development of SMAILE's ML infrastructure and research protocols at Karolinska Institutet.",
+  "Active open-source contributor — TrustCV, TRIAGE-MEDLEY, and MEDLEY-BENCH.",
+];
+
+/** Languages */
+export const spokenLanguages = [
+  { name: "English", level: "Professional" },
+  { name: "Swedish", level: "Professional" },
+  { name: "Persian (Farsi)", level: "Native" },
+  { name: "Arabic", level: "Conversational" },
+];
+
