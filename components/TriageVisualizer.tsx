@@ -56,7 +56,7 @@ export default function TriageVisualizer() {
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
         <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#bfe6da" }}>
-          How it works · Illustrative Demo
+          How it works · Illustrative
         </span>
         <div style={{ display: "flex", gap: 4, padding: 3, borderRadius: 999, background: "rgba(255,255,255,0.08)", flexWrap: "wrap" }}>
           {MED_STEPS.map((label, i) => {

@@ -24,23 +24,37 @@ export default function ExperiencePage() {
           <Reveal as="p" delay={160} className="page-intro">
             From mathematical foundations and microvascular imaging to clinical AI and trustworthy model evaluation. Each role connects a scientific question with a practical contribution.
           </Reveal>
-          <Reveal delay={220} className="btn-row" style={{ marginTop: 32 }}>
+          <Reveal delay={220} style={{ display: "flex", gap: 4, marginTop: 32, padding: 4, borderRadius: 999, border: "1px solid var(--line)", width: "max-content" }}>
             <button
               onClick={() => setTab("experience")}
-              className={`btn btn-sm ${tab === "experience" ? "btn-primary" : ""}`}
+              aria-pressed={tab === "experience"}
               style={{
+                border: 0,
+                borderRadius: 999,
+                padding: "10px 20px",
+                fontSize: 14,
+                fontWeight: 500,
+                cursor: "pointer",
                 background: tab === "experience" ? "var(--ink)" : "transparent",
                 color: tab === "experience" ? "var(--bg)" : "var(--ink)",
+                transition: "background .35s, color .35s",
               }}
             >
               Experience
             </button>
             <button
               onClick={() => setTab("education")}
-              className={`btn btn-sm ${tab === "education" ? "btn-primary" : ""}`}
+              aria-pressed={tab === "education"}
               style={{
+                border: 0,
+                borderRadius: 999,
+                padding: "10px 20px",
+                fontSize: 14,
+                fontWeight: 500,
+                cursor: "pointer",
                 background: tab === "education" ? "var(--ink)" : "transparent",
                 color: tab === "education" ? "var(--bg)" : "var(--ink)",
+                transition: "background .35s, color .35s",
               }}
             >
               Education
@@ -49,16 +63,18 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="section-bottom">
+      <section className="section-bottom" style={{ paddingTop: "clamp(48px, 6vw, 80px)" }}>
         <div className="container" style={{ maxWidth: 1080 }}>
           <div style={{ position: "relative", paddingLeft: 40 }}>
-            <div
+            <Reveal
+              variant="vline"
               style={{
                 position: "absolute",
                 left: 7,
                 top: 8,
                 bottom: 8,
-                width: 2,
+                width: 1.5,
+                transformOrigin: "top",
                 background: "linear-gradient(var(--accent), var(--line))",
               }}
             />
@@ -74,7 +90,7 @@ export default function ExperiencePage() {
                     display: "flex",
                     flexWrap: "wrap",
                     gap: "12px 40px",
-                    paddingBottom: 48,
+                    paddingBottom: 52,
                   }}
                 >
                   <span
@@ -148,7 +164,7 @@ export default function ExperiencePage() {
                         href={`/work/${relatedProject.slug}`}
                         style={{
                           alignSelf: "flex-start",
-                          marginTop: 8,
+                          marginTop: 6,
                           color: "var(--accent)",
                           fontSize: 15,
                           fontWeight: 600,
@@ -166,14 +182,13 @@ export default function ExperiencePage() {
             })}
           </div>
 
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", paddingLeft: 40, marginTop: 16 }}>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", paddingLeft: 40 }}>
             <a href={site.cv} target="_blank" rel="noopener" className="btn btn-primary">
               <span>Download CV (PDF)</span>
               <span className="arrow">↓</span>
             </a>
             <Link href="/#contact" className="btn">
               <span>Get in touch</span>
-              <span className="arrow">↗</span>
             </Link>
           </div>
         </div>

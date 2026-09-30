@@ -1,14 +1,16 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { site } from "@/config/site";
+import { prefersReduced } from "@/lib/motion";
 import { publications, publicationStats, publicationAreas } from "@/lib/content";
 
 export default function PublicationsPage() {
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [areaFilter, setAreaFilter] = useState<string>("All areas");
+  const listRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -31,6 +33,17 @@ export default function PublicationsPage() {
 
   const years = useMemo(() => {
     return Array.from(new Set(filtered.map((p) => p.year))).sort((a, b) => b - a);
+  }, [filtered]);
+
+  useEffect(() => {
+    if (prefersReduced()) return;
+    listRef.current?.querySelectorAll("article").forEach((article, index) => {
+      if (index >= 14) return;
+      article.animate(
+        [{ opacity: 0, translate: "0 14px" }, { opacity: 1, translate: "0 0" }],
+        { duration: 500, delay: index * 35, easing: "cubic-bezier(.22, 1, .36, 1)", fill: "backwards" },
+      );
+    });
   }, [filtered]);
 
   const typeTabs = [
@@ -62,19 +75,19 @@ export default function PublicationsPage() {
           </Reveal>
           <Reveal delay={220} style={{ display: "flex", flexWrap: "wrap", gap: "clamp(24px, 5vw, 64px)", marginTop: 40 }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-              <strong style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, fontSize: 44 }}>
+              <strong style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, fontSize: 48 }}>
                 {publicationStats.total}
               </strong>
               <span style={{ fontSize: 13, color: "var(--muted)" }}>Publications</span>
             </div>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-              <strong style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, fontSize: 44 }}>
+              <strong style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, fontSize: 48 }}>
                 {publicationStats.journals}
               </strong>
               <span style={{ fontSize: 13, color: "var(--muted)" }}>Journal articles</span>
             </div>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-              <strong style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, fontSize: 44 }}>
+              <strong style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, fontSize: 48 }}>
                 {publicationStats.first}
               </strong>
               <span style={{ fontSize: 13, color: "var(--muted)" }}>First author</span>
@@ -109,11 +122,11 @@ export default function PublicationsPage() {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search title, author, or venue..."
+              placeholder="Search title, author, or journal"
               aria-label="Search publications"
               style={{
                 flex: "1 1 280px",
-                height: 44,
+                height: 46,
                 padding: "0 18px",
                 borderRadius: 999,
                 border: "1px solid var(--line)",
@@ -131,11 +144,12 @@ export default function PublicationsPage() {
                   <button
                     key={pt.id}
                     onClick={() => setTypeFilter(pt.id)}
+                    aria-pressed={active}
                     style={{
                       display: "inline-flex",
                       gap: 8,
                       alignItems: "center",
-                      height: 38,
+                      height: 40,
                       padding: "0 14px",
                       borderRadius: 999,
                       border: `1px solid ${active ? "var(--ink)" : "var(--line)"}`,
@@ -162,14 +176,15 @@ export default function PublicationsPage() {
                 <button
                   key={pa}
                   onClick={() => setAreaFilter(pa)}
+                  aria-pressed={active}
                   style={{
-                    height: 32,
+                    height: 34,
                     padding: "0 12px",
                     borderRadius: 999,
                     border: `1px solid ${active ? "var(--accent)" : "var(--line)"}`,
                     background: active ? "var(--accentSoft)" : "transparent",
                     color: active ? "var(--accent)" : "var(--muted)",
-                    fontSize: 12.5,
+                    fontSize: 13,
                     cursor: "pointer",
                     transition: "all .25s",
                   }}
@@ -184,14 +199,14 @@ export default function PublicationsPage() {
 
       {/* Publications List */}
       <section style={{ padding: "32px 0 clamp(72px, 9vw, 120px)" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 clamp(20px, 4vw, 56px)" }}>
-          <p role="status" style={{ margin: "0 0 16px", fontSize: 13, color: "var(--muted)" }}>
-            Showing {filtered.length} of {publicationStats.total} publications
+        <div ref={listRef} style={{ maxWidth: 1080, margin: "0 auto", padding: "0 clamp(20px, 4vw, 56px)" }}>
+          <p role="status" style={{ margin: "0 0 8px", fontSize: 13, color: "var(--muted)" }}>
+            {filtered.length} of {publicationStats.total} publications
           </p>
 
           {filtered.length === 0 && (
             <div style={{ padding: "48px 0", display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-start" }}>
-              <p style={{ margin: 0, fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26 }}>
+              <p style={{ margin: 0, fontFamily: "var(--font-serif), Georgia, serif", fontSize: 28 }}>
                 No publications match these filters.
               </p>
               <button
@@ -200,9 +215,9 @@ export default function PublicationsPage() {
                   setTypeFilter("all");
                   setAreaFilter("All areas");
                 }}
-                className="btn btn-sm btn-primary"
+                style={{ background: "none", border: 0, padding: "6px 0", color: "var(--accent)", fontSize: 15, fontWeight: 600, cursor: "pointer" }}
               >
-                Clear all filters
+                Clear filters
               </button>
             </div>
           )}
@@ -217,8 +232,8 @@ export default function PublicationsPage() {
                   flexWrap: "wrap",
                   gap: "0 40px",
                   borderTop: "1px solid var(--line)",
-                  paddingTop: 32,
-                  marginTop: 32,
+                  paddingTop: 28,
+                  marginTop: 28,
                 }}
               >
                 <h2
@@ -277,21 +292,7 @@ export default function PublicationsPage() {
                         >
                           {p.area}
                         </span>
-                        {p.first && (
-                          <span
-                            style={{
-                              fontSize: 11,
-                              letterSpacing: ".08em",
-                              textTransform: "uppercase",
-                              padding: "4px 9px",
-                              borderRadius: 4,
-                              border: "1px solid var(--line)",
-                              color: "var(--ink)",
-                            }}
-                          >
-                            First author
-                          </span>
-                        )}
+
                       </div>
 
                       <h3 style={{ margin: 0, fontSize: 19, fontWeight: 500, lineHeight: 1.5 }}>

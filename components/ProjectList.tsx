@@ -43,7 +43,7 @@ export default function ProjectList({ projects, showYear = false, heading = "h3"
   const hp = projects.find((p) => p.slug === hover) ?? projects[0];
 
   return (
-    <div className={"projects" + (hover ? " has-hover" : "")} onMouseMove={track} onMouseLeave={() => setHover(null)}>
+    <div className={"projects" + (showYear ? " projects-compact" : "") + (hover ? " has-hover" : "")} onMouseMove={track} onMouseLeave={() => setHover(null)}>
       {projects.map((p, i) => (
         <Reveal key={p.slug}>
           <Link

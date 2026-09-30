@@ -24,7 +24,6 @@ export default async function CasePage({ params }: Params) {
   const i = projects.findIndex((p) => p.slug === slug);
   if (i < 0) notFound();
   const p = projects[i];
-  const prev = projects[(i - 1 + projects.length) % projects.length];
   const next = projects[(i + 1) % projects.length];
 
   return (
@@ -85,22 +84,13 @@ export default async function CasePage({ params }: Params) {
           </Reveal>
         )}
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, paddingTop: 36, borderTop: "1px solid var(--line)", flexWrap: "wrap" }}>
-          <Link href={`/work/${prev.slug}`} style={{ display: "flex", alignItems: "center", gap: 16, color: "var(--ink)" }}>
-            <span style={{ width: 44, height: 44, borderRadius: "50%", border: "1px solid var(--line)", display: "grid", placeItems: "center" }}>←</span>
-            <span className="stack-xs">
-              <span className="small muted">Previous project</span>
-              <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 20 }}>{prev.name}</span>
-            </span>
-          </Link>
-          <Link href={`/work/${next.slug}`} style={{ display: "flex", alignItems: "center", gap: 16, color: "var(--ink)", textAlign: "right" }}>
-            <span className="stack-xs">
-              <span className="small muted">Next project</span>
-              <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 20 }}>{next.name}</span>
-            </span>
-            <span style={{ width: 44, height: 44, borderRadius: "50%", border: "1px solid var(--line)", display: "grid", placeItems: "center" }}>→</span>
-          </Link>
-        </div>
+        <Link href={`/work/${next.slug}`} className="next">
+          <span className="stack-xs">
+            <span className="small muted">Next project</span>
+            <span className="next-name">{next.name}</span>
+          </span>
+          <span className="row-arrow" aria-hidden="true">→</span>
+        </Link>
       </section>
     </>
   );

@@ -32,7 +32,7 @@ export const projects: Project[] = [
     links: [{ label: "Code", href: "https://github.com/ki-smile/trustcv" }, { label: "Documentation", href: "https://ki-smile.github.io/trustcv/" }, { label: "Preprint", href: "https://doi.org/10.21203/rs.3.rs-9357577/v1" }, { label: "Related study", href: "https://doi.org/10.2196/87728" }],
   },
   {
-    slug: "triage-medley", featured: true, name: "TRIAGE-MEDLEY", category: "Clinical speech & uncertainty", status: "Research software · Journal article", year: "2026",
+    slug: "triage-medley", featured: true, name: "MEDLEY-ASR", category: "Clinical speech & uncertainty", status: "Research software · Journal article", year: "2026",
     headline: "Make uncertainty visible to the reviewer.",
     summary: "Use disagreement between speech-recognition systems to focus human review of clinical transcripts.",
     problem: "A fluent transcript can still contain an important error. Reviewing every word manually is costly, especially when a reference transcript is unavailable.",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
 
 export const domains = [
   { title: "Validation under dependence", description: "Evaluation designs that account for repeated measurements, participants, groups, time, and space.", skills: ["Nested cross-validation", "Participant-aware splits", "Calibration", "Leakage checks"], slug: "trustcv", work: "TrustCV & validation research" },
-  { title: "Clinical speech & uncertainty", description: "Make disagreement visible and connect model outputs to targeted human review.", skills: ["Transcript alignment", "Multi-ASR workflows", "Uncertainty", "Human validation"], slug: "triage-medley", work: "TRIAGE-MEDLEY" },
+  { title: "Clinical speech & uncertainty", description: "Make disagreement visible and connect model outputs to targeted human review.", skills: ["Transcript alignment", "Multi-ASR workflows", "Uncertainty", "Human validation"], slug: "triage-medley", work: "MEDLEY-ASR" },
   { title: "Medical imaging & computer vision", description: "Quantitative image analysis with explicit measurement definitions and clinical interpretation.", skills: ["Image processing", "Capillary quantification", "Deep learning", "Reliability"], slug: "capillaroscopy", work: "Capillaroscopy & medical imaging" },
   { title: "Multimodal machine learning", description: "Combine complementary measurements without losing the structure of the underlying study.", skills: ["Biomechanics", "EMG", "PyTorch", "scikit-learn", "SHAP"], slug: "rehabilitation-ai", work: "Rehabilitation & movement AI" },
   { title: "Scientific software", description: "Research methods packaged as inspectable, documented, and reusable workflows.", skills: ["Python packages", "Testing", "Documentation", "MLflow", "Docker"], slug: "trustcv", work: "Open-source validation tooling" },
@@ -141,7 +141,7 @@ export const domains = [
 /** Tabs in the hero ("A closer look at my work"). */
 export const focusAreas = [
   { label: "Validation", name: "TrustCV", description: "I develop validation tools that account for participants, time, and dependence in research data.", slug: "trustcv" },
-  { label: "Clinical speech", name: "TRIAGE-MEDLEY", description: "I study how disagreement between speech models can help people review clinical transcripts.", slug: "triage-medley" },
+  { label: "Clinical speech", name: "MEDLEY-ASR", description: "I study how disagreement between speech models can help people review clinical transcripts.", slug: "triage-medley" },
   { label: "LLM evaluation", name: "MEDLEY-BENCH", description: "I contribute to research on how language models revise answers after self-review and peer feedback.", slug: "medley-bench" },
 ];
 
@@ -152,7 +152,7 @@ export const stats = [
 ];
 
 /** Scrolling strip under the hero. */
-export const marquee = ["Karolinska Institutet", "KTH Royal Institute of Technology", "Luleå University of Technology", "Umeå University", "Mid Sweden University", "Frontiers in Artificial Intelligence", "JMIR AI", "Journal of Biomechanics", "Journal of Sports Sciences", "Climate Risk Management", "Transportation Research Part D", "Microvascular Research"];
+export const marquee = ["Machine learning", "Cross-validation", "Leakage detection", "Uncertainty", "Explainable AI", "Medical imaging", "Computer vision", "Clinical speech", "LLM evaluation", "Multimodal ML", "Python", "PyTorch", "scikit-learn", "Scientific software"];
 
 export const publicationTopics = ["Validation under dependence", "Clinical speech & human review", "Multimodal rehabilitation AI", "Medical imaging & reproducibility"];
 
@@ -196,7 +196,7 @@ export const experiences: ExperienceItem[] = [
     bullets: [
       "Lead developer of TrustCV: validation architecture, leakage checks, reusable Python tooling, and methodological documentation.",
       "Co-developed MEDLEY-BENCH; contributed formal analysis, human validation, and benchmark interpretation.",
-      "Co-develop TRIAGE-MEDLEY: transcript alignment, model disagreement, uncertainty surfacing, and human-review workflows.",
+      "Co-develop MEDLEY-ASR: transcript alignment, model disagreement, uncertainty surfacing, and human-review workflows.",
       "Corresponding author and co-supervisor of an international scoping review of AI in nailfold capillaroscopy."
     ],
     slug: "trustcv"
@@ -406,7 +406,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1007/s11042-021-11864-2",
     area: "Computer Vision",
     first: true,
-    contribution: "First author — comprehensive survey, taxonomies, latency/throughput evaluation, and synthesis."
+    contribution: ""
   },
   {
     title: "Nailfold microvascular changes in patients with systemic lupus erythematosus",
@@ -418,7 +418,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1016/j.mvr.2019.103910",
     area: "Medical Imaging",
     first: true,
-    contribution: "First author — quantitative morphometry, statistical evaluation, and clinical correlation."
+    contribution: ""
   },
   {
     title: "Practical issues in assessing nailfold capillaroscopic images: a summary",
@@ -430,7 +430,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1007/s10067-019-04644-9",
     area: "Medical Imaging",
     first: true,
-    contribution: "First author — methodological consensus, observer reliability review, and best-practice recommendations."
+    contribution: ""
   },
   {
     title: "Image enhancement effect on inter and intra-observer reliability of nailfold capillary assessment",
@@ -442,7 +442,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1016/j.mvr.2018.06.005",
     area: "Medical Imaging",
     first: true,
-    contribution: "First author — image processing pipeline, multi-observer agreement study, and reproducibility metrics."
+    contribution: ""
   },
   {
     title: "Elliptical broken line method for calculating capillary density in nailfold capillaroscopy: proposal and evaluation",
@@ -454,7 +454,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1016/j.mvr.2017.04.002",
     area: "Medical Imaging",
     first: true,
-    contribution: "First author — geometric algorithm design, automated density computation, and clinical benchmarking."
+    contribution: ""
   },
   {
     title: "Capillary density: An important parameter in nailfold capillaroscopy",
@@ -466,7 +466,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1016/j.mvr.2016.09.001",
     area: "Medical Imaging",
     first: true,
-    contribution: "First author — review and quantitative definition of capillary density in systemic sclerosis."
+    contribution: ""
   },
   {
     title: "Counting capillaries in nailfold capillaroscopy: State of the art and a proposed method",
@@ -478,7 +478,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1109/IECBES.2016.7843437",
     area: "Medical Imaging",
     first: true,
-    contribution: "First author — automated detection architecture and experimental comparison."
+    contribution: ""
   },
   {
     title: "Nailfold Capillaroscopy in Rheumatic Diseases: Which Parameters Should Be Evaluated?",
@@ -490,7 +490,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1155/2015/974530",
     area: "Medical Imaging",
     first: false,
-    contribution: "Co-author — parameter definitions, clinical image curation, and literature synthesis."
+    contribution: ""
   },
   {
     title: "Exact Solution of Time-Fractional Partial Differential Equations Using Sumudu Transform",
@@ -502,7 +502,7 @@ export const publications: Publication[] = [
     url: "",
     area: "Applied Mathematics",
     first: true,
-    contribution: "First author — analytical derivation, integral transform methodology, and proof."
+    contribution: ""
   },
   {
     title: "Exact Solution of Partial Differential Equation Using Homo-Separation of Variables",
@@ -514,7 +514,7 @@ export const publications: Publication[] = [
     url: "",
     area: "Applied Mathematics",
     first: true,
-    contribution: "First author — exact analytical solutions for nonlinear PDE systems."
+    contribution: ""
   },
   {
     title: "Application of Homo-Separation of Variables method on nonlinear system of PDEs",
@@ -526,7 +526,7 @@ export const publications: Publication[] = [
     url: "",
     area: "Applied Mathematics",
     first: true,
-    contribution: "First author — mathematical proofs and applications to coupled physical systems."
+    contribution: ""
   },
   {
     title: "Using Homo-Separation of Variables for Solving Systems of Nonlinear Fractional Partial Differential Equations",
@@ -538,7 +538,7 @@ export const publications: Publication[] = [
     url: "https://doi.org/10.1155/2013/421378",
     area: "Applied Mathematics",
     first: true,
-    contribution: "First author — fractional calculus techniques for nonlinear systems."
+    contribution: ""
   },
   {
     title: "New Approach to Find the Exact Solution of Fractional Partial Differential Equation",
@@ -550,7 +550,7 @@ export const publications: Publication[] = [
     url: "",
     area: "Applied Mathematics",
     first: true,
-    contribution: "First author — formulation of exact solutions for fractional differential equations."
+    contribution: ""
   },
   {
     title: "Using Spectral Descriptive Signatures for Industrial Plume Detection",
@@ -562,7 +562,7 @@ export const publications: Publication[] = [
     url: "",
     area: "Computer Vision",
     first: true,
-    contribution: "First author — spectral feature extraction and classification pipeline."
+    contribution: ""
   }
 ];
 
@@ -617,7 +617,7 @@ export const teaching = [
 export const leadership = [
   "Reviewer for peer-reviewed journals in medical informatics and machine learning.",
   "Contributed to the development of SMAILE's ML infrastructure and research protocols at Karolinska Institutet.",
-  "Active open-source contributor — TrustCV, TRIAGE-MEDLEY, and MEDLEY-BENCH.",
+  "Active open-source contributor — TrustCV, MEDLEY-ASR, and MEDLEY-BENCH.",
 ];
 
 /** Languages */

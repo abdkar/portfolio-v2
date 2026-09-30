@@ -7,7 +7,7 @@ import { prefersReduced } from "@/lib/motion";
 type Props = {
   as?: ElementType;
   delay?: number;
-  variant?: "up" | "line";
+  variant?: "up" | "line" | "vline";
   className?: string;
   style?: CSSProperties;
   children?: ReactNode;
@@ -24,9 +24,11 @@ export default function Reveal({ as: Tag = "div", delay = 0, variant = "up", chi
     const keyframes =
       variant === "line"
         ? [{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }]
-        : [{ opacity: 0, translate: `0 ${m.dist(m.distance.reveal)}px` }, { opacity: 1, translate: "0 0" }];
+        : variant === "vline"
+          ? [{ transform: "scaleY(0)" }, { transform: "scaleY(1)" }]
+          : [{ opacity: 0, translate: `0 ${m.dist(m.distance.reveal)}px` }, { opacity: 1, translate: "0 0" }];
     const anim = el.animate(keyframes, {
-      duration: m.dur(variant === "line" ? m.duration.line : m.duration.reveal),
+      duration: m.dur(variant === "up" ? m.duration.reveal : m.duration.line),
       delay,
       easing: m.ease,
       fill: "backwards",
